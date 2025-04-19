@@ -98,8 +98,9 @@
   }
 }
 
+/* Fix for circular dependency - define the animation directly instead of using @apply */
 .animate-fade-in {
-  @apply animate-fade-in;
+  animation: fade-in 0.3s ease-out;
 }
 
 .data-table-wrapper .resize-handle {
