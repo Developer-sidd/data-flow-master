@@ -11,7 +11,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/components/ui/use-toast";
-import { FilterX, Plus, Upload } from "lucide-react";
+import { FilterX, Plus, Upload, X } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -185,7 +185,7 @@ export default function ProductsPage() {
       {
         id: "name",
         header: "Product",
-        accessorKey: "name",
+        accessorKey: "name" as keyof Product,
         cell: (row: Product) => (
           <div className="flex flex-col">
             <div className="font-medium">{row.name}</div>
@@ -199,26 +199,26 @@ export default function ProductsPage() {
       {
         id: "category",
         header: "Category",
-        accessorKey: "category",
+        accessorKey: "category" as keyof Product,
         sortable: true,
       },
       {
         id: "price",
         header: "Price",
-        accessorKey: "price",
+        accessorKey: "price" as keyof Product,
         cell: (row: Product) => <span>${row.price}</span>,
         sortable: true,
       },
       {
         id: "stock",
         header: "Stock",
-        accessorKey: "stock",
+        accessorKey: "stock" as keyof Product,
         sortable: true,
       },
       {
         id: "rating",
         header: "Rating",
-        accessorKey: "rating",
+        accessorKey: "rating" as keyof Product,
         cell: (row: Product) => (
           <div className="flex items-center">
             <span className="mr-1">{row.rating}</span>
@@ -235,7 +235,7 @@ export default function ProductsPage() {
       {
         id: "status",
         header: "Status",
-        accessorKey: "status",
+        accessorKey: "status" as keyof Product,
         cell: (row: Product) => {
           const variant =
             row.status === "active"
@@ -250,7 +250,7 @@ export default function ProductsPage() {
       {
         id: "dateAdded",
         header: "Date Added",
-        accessorKey: "dateAdded",
+        accessorKey: "dateAdded" as keyof Product,
         sortable: true,
       },
     ],

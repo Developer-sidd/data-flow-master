@@ -193,7 +193,8 @@ export function DataTable<T extends { id: string | number }>({
                 <TableHead className="w-10">
                   <Checkbox
                     checked={allSelected}
-                    indeterminate={someSelected && !allSelected}
+                    // Remove the indeterminate prop as it's not supported
+                    data-state={someSelected && !allSelected ? "indeterminate" : undefined}
                     onCheckedChange={handleToggleSelectAll}
                     aria-label="Select all rows"
                   />
